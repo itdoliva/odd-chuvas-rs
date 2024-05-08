@@ -1,0 +1,78 @@
+/**
+* @license
+*
+* Font Family: Erode
+* Designed by: Nikhil Ranganathan
+* URL: https://www.fontshare.com/fonts/erode
+* © 2024 Indian Type Foundry
+**/
+
+@font-face {
+  font-family: 'Erode';
+  src: url('/fonts/Erode-Semibold.woff2') format('woff2'),
+       url('/fonts/Erode-Semibold.woff') format('woff'),
+       url('/fonts/Erode-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Erode';
+  src: url('/fonts/Erode-SemiboldItalic.woff2') format('woff2'),
+       url('/fonts/Erode-SemiboldItalic.woff') format('woff'),
+       url('/fonts/Erode-SemiboldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Erode';
+  src: url('/fonts/Erode-Bold.woff2') format('woff2'),
+       url('/fonts/Erode-Bold.woff') format('woff'),
+       url('/fonts/Erode-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Erode';
+  src: url('/fonts/Erode-BoldItalic.woff2') format('woff2'),
+       url('/fonts/Erode-BoldItalic.woff') format('woff'),
+       url('/fonts/Erode-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+
+/**
+* Font Family: Public Sanns
+**/
+
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/PublicSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/PublicSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/PublicSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/PublicSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
