@@ -1,1 +1,55 @@
-{}
+{
+  "headline": {
+    "1": "O que é muita <span class='italic'>chuva</span>?",
+    "2": "Mas quanta chuva é muita chuva?"
+  },
+  "chart-title": {
+    "flooded-cities-pct": "De 500 cidades, a água transbordou para 340, ou ",
+    "area-equivalents": "Essa km2 é a área equivalente a",
+    "area-corresponds-to": "Que corresponde a ",
+    "people-affected": "Impactando"
+  },
+  "label": {
+    "cities": "municípios",
+    "people": "pessoas",
+    "total-area": "área total",
+    "affected-area": "área impactada",
+    "of-spain": "da Espanha",
+    "of-italy": "da Itália",
+    "of-england": "da Inglaterra",
+    "of-barcelona-population": "da população de Barcelona",
+    "of-rome-population": "da população de Roma",
+    "of-paris-population": "da população de Paris",
+    "sheltered-people": "pessoas em abrigos, ou o mesmo que",
+    "displaced-people": "desalojados",
+    "affected-people": "afetados",
+    "injured-people": "feridos",
+    "missing-people": "desaparecidos"
+
+  },
+  "p": {
+    "1": "Vivemos tempos estranhos.",
+    "2": "Calores absurdos em um lugar, geadas repentinas, secas preocupantes.",
+    "3": "Nao há mais como negar que as consequências da tao falada emergência climática bateu na nossa porta. Ou melhor, derrubou ela.",
+    "4": "Na primeira semana de Maio de 2024 o Rio Grande do Sul, estado mais ao Sul do Brasil, viveu o maior desastre climático da sua história.",
+    "5": "Dos dias 30 de Abril a 5 de Maio nao parou de chover, causando inundaçoes, rompimento de barragens, elevaçao de rios, desalojamento de pessoas e animais.",
+    "6": "Imagine que esta tela é o estado do Rio Grande do Sul.",
+    "7": "No ano passado, entre os dias de x a x choveu x mm.",
+    "8": "Este ano, a chuva vem acontecendo desde Março...",
+    "9": "E em Abril...",
+    "10": "A chuva destes meses",
+    "11": "elevou o nível dos rios",
+    "12": "deixou o solo muito molhado",
+    "13": "Mesmo depois de tanta chuva... veio mais chuva.",
+    "14": "Chegando a limites nunca antes vistos.",
+    "15": "As chuvas excessivas nao conseguem ser absorvidas pelo solo e acumulam",
+    "16": "E os rios, lagoas e lagos já estavam cheios",
+    "17": "Fazendo com que essa água transborde e invada outras cidades",
+    "18": "Imagine todas as suas coisas, tudo que você conquistou na sua vida",
+    "": "embaixo d'água em menos de 24 horas",
+    "19": "Essa é a situação de",
+    "20": "Emergência Climática",
+    "21": "Toda definiçao de grandeza precisa de um ponto de comparaçao. Por isso, a resposta para essa pergunta sempre será  -  depende!"
+  }
+
+}

@@ -1,0 +1,23 @@
+{
+  "nCities": {
+    "total": 500,
+    "affected": 340
+  },
+  "area": {
+    "cities": 497,
+    "total": 281748,
+    "affected": 197000,
+    "of-spain": 0.389,
+    "of-italy": 0.653,
+    "of-england": 0.9407
+  },
+  "people": {
+    "unsheltered": 80573,
+    "affected": 710022,
+    "injured": 155,
+    "missing": 100,
+    "of-barcelona": 0.4438,
+    "of rome": 0.2536,
+    "of paris": 0.3228
+  }
+}
