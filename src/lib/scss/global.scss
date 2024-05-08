@@ -1,2 +1,40 @@
 @import "./fonts.scss";
-@import "./breakpoints.scss";
+@import "./breakpoints.scss"; 
+
+:root {
+  --clr-primary: #F2F7E8;
+  --clr-secondary: #B4B8AB;
+  --clr-background: #284B63;
+  --clr-on-background: #153243;
+
+  --ff-default: "Public Sans";
+  --ff-headline: "Erode";
+
+  --fs-default: 26px;
+}
+
+*, 
+*::after, 
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: var(--ff-default);
+  font-size: var(--fs-default);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
