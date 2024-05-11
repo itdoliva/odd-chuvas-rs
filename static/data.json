@@ -1,23 +1,25 @@
 {
-  "nCities": {
+  "cities": {
     "total": 500,
-    "affected": 340
+    "affected": 431
   },
   "area": {
     "cities": 497,
     "total": 281748,
     "affected": 197000,
-    "of-spain": 0.389,
-    "of-italy": 0.653,
-    "of-england": 0.9407
+    "ofSpain": 0.389,
+    "ofItaly": 0.653,
+    "ofEngland": 0.9407
   },
   "people": {
-    "unsheltered": 80573,
-    "affected": 710022,
-    "injured": 155,
-    "missing": 100,
-    "of-barcelona": 0.4438,
-    "of rome": 0.2536,
-    "of paris": 0.3228
+    "inShelters": 68519,
+    "displaced": 327105,
+    "affected": 1740000,
+    "injured": 754,
+    "missing": 134,
+    "dead": 107,
+    "ofBarcelona": 0.4438,
+    "ofRome": 0.2536,
+    "ofParis": 0.3228
   }
 }

@@ -20,11 +20,12 @@
     "of-barcelona-population": "da população de Barcelona",
     "of-rome-population": "da população de Roma",
     "of-paris-population": "da população de Paris",
-    "sheltered-people": "pessoas em abrigos, ou o mesmo que",
+    "in-shelters-people-or": "pessoas em abrigos, ou o mesmo que",
     "displaced-people": "desalojados",
     "affected-people": "afetados",
     "injured-people": "feridos",
-    "missing-people": "desaparecidos"
+    "missing-people": "desaparecidos",
+    "dead-people": "mortos"
 
   },
   "p": {
@@ -48,8 +49,11 @@
     "18": "Imagine todas as suas coisas, tudo que você conquistou na sua vida",
     "": "embaixo d'água em menos de 24 horas",
     "19": "Essa é a situação de",
-    "20": "Emergência Climática",
-    "21": "Toda definiçao de grandeza precisa de um ponto de comparaçao. Por isso, a resposta para essa pergunta sempre será  -  depende!"
+    "20": "Emergência Climática"
+  },
+
+  "note": {
+    "1": "Toda definiçao de grandeza precisa de um ponto de comparaçao. Por isso, a resposta para essa pergunta sempre será  -  depende!"
   }
 
 }
