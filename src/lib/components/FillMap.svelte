@@ -48,13 +48,16 @@
 </svg>
 
 <style lang="scss">
-    .map__background {
+
+  .map {
+    &__background {
       fill: var(--clr-primary);
       stroke: black;
       stroke-width: 2;
     }
 
-    .map__bar {
+    &__bar {
       fill: var(--clr-secondary);
     }
+  }
 </style>

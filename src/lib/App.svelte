@@ -14,7 +14,7 @@
   export let data
 </script>
 
-<div class="app">
+<main class="app">
   <FillMap country="italy" p=.9 />
   
   <SlideSection index=1>
@@ -82,11 +82,9 @@
   
     <Text index=10>{$_("p.10")}</Text>
     <Text index=20>{$_("p.20")}</Text>
-    <Text index=21>{$_("p.21")}</Text>
   </SlideSection>
 
-
-</div>
+</main>
 
 <style lang="scss">
   .app {
