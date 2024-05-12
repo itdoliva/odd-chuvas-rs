@@ -9,10 +9,13 @@
   import BigNumber from "$lib/components/BigNumber.svelte";
   import SlideSection from "$lib/components/SlideSection.svelte";
 
+  import FillMap from "$lib/components/FillMap.svelte";
+
   export let data
 </script>
 
 <div class="app">
+  <FillMap country="italy" p=.9 />
   
   <SlideSection index=1>
     <Headline index=1>{@html $_("headline.1")}</Headline>
