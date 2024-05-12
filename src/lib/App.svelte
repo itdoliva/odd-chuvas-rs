@@ -62,13 +62,13 @@
   
     <Text index=103>{$_("chart-title.people-affected")}</Text>
   
-    <BigNumber value={data.people.affected} title={$_("people")} />
+    <BigNumber value={data.people.affected} title={$_("people")} size="l" />
   
     <BigNumber value={data.people.ofBarcelona} title={$_("of-barcelona-population")} />
     <BigNumber value={data.people.ofRome} title={$_("of-rome-population")} />
     <BigNumber value={data.people.ofParis} title={$_("of-paris-population")} />
   
-    <BigNumber value={data.people.inShelters} title={$_("in-shelters-people-or")} />
+    <BigNumber value={data.people.inShelters} title={$_("in-shelters-people-or")} size="l" />
   
     <BigNumber value={data.people.displaced} title={$_("displaced-people")} />
     <BigNumber value={data.people.affected} title={$_("affected-people")} />
