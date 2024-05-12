@@ -24,6 +24,9 @@
   export let country
   export let p
 
+  const mapId = crypto.randomUUID()
+  const maskId = crypto.randomUUID()
+
   const { d, width, height } = data[country]
 
   const y = scaleLinear()
@@ -34,17 +37,16 @@
 
 <svg class="map" {width} {height} viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <path id="map" {d} />
+    <path id={mapId} {d} />
   </defs>
 
-  <mask id="mask">
-    <use href="#map" fill="white" stroke="black" stroke-width=10 />
+  <mask id={maskId}>
+    <use href="#{mapId}" fill="white" stroke="black" stroke-width=10 />
   </mask>
   
-  <use class="map__background" href="#map" />
+  <use class="map__background" href="#{mapId}" />
 
-  <rect class="map__bar" x=0 y={height - y(p)} width="100%" height={y(p)} mask="url(#mask)"/>
-  
+  <rect class="map__bar" x=0 y={height - y(p)} width="100%" height={y(p)} mask="url(#{maskId})"/>
 </svg>
 
 <style lang="scss">

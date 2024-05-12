@@ -15,7 +15,6 @@
 </script>
 
 <main class="app">
-  <FillMap country="italy" p=.9 />
   
   <SlideSection index=1>
     <Headline index=1>{@html $_("headline.1")}</Headline>
@@ -57,8 +56,11 @@
   
     <Text index=102>{$_("chart-title.area-corresponds-to")}</Text>
     <BigNumber value={data.area.ofSpain} title={$_("label.of-spain")} />
+    <FillMap country="spain" p=.389 />
     <BigNumber value={data.area.ofItaly} title={$_("label.of-italy")} />
+    <FillMap country="italy" p=.653 />
     <BigNumber value={data.area.ofEngland} title={$_("label.of-england")} />
+    <FillMap country="unitedKingdom" p=.9407 />
   
     <Text index=103>{$_("chart-title.people-affected")}</Text>
   
