@@ -1,17 +1,20 @@
 <script>
   // Libraries
-  import { _ } from "svelte-i18n";
+  import { _, locale } from "svelte-i18n";
 
   // Components
   import Headline from "$lib/components/Headline.svelte";
   import Text from "$lib/components/Text.svelte";
-
   import BigNumber from "$lib/components/BigNumber.svelte";
   import SlideSection from "$lib/components/SlideSection.svelte";
-
   import FillMap from "$lib/components/FillMap.svelte";
 
+  // Functions
+  import format from "$lib/format"
+
   export let data
+
+
 </script>
 
 <main class="app">
@@ -50,35 +53,34 @@
     <Text index=100>{$_("chart-title.flooded-cities-pct")}</Text>
   
     <Text index=101>{$_("chart-title.area-equivalents")}</Text>
-    <BigNumber value={data.area.cities} title={$_("label.cities")} />
-    <BigNumber value="{data.area.total} km2" title="({$_("label.total-area")})" />
-    <BigNumber value="{data.area.affected} km2" title="({$_("label.affected-area")} ~ 70%)" />
+    <BigNumber value={format($locale, ",", data.area.cities)} title={$_("label.cities")} />
+    <BigNumber value="{format($locale, ",", data.area.total)} km2" title="({$_("label.total-area")})" />
+    <BigNumber value="{format($locale, ",", data.area.affected)} km2" title="({$_("label.affected-area")} ~ {format($locale, ".0%", data.area.affected / data.area.total)})" />
   
     <Text index=102>{$_("chart-title.area-corresponds-to")}</Text>
-    <BigNumber value={data.area.ofSpain} title={$_("label.of-spain")} />
+    <BigNumber value={format($locale, ".1%", data.area.ofSpain)} title={$_("label.of-spain")} />
     <FillMap country="spain" p=.389 />
-    <BigNumber value={data.area.ofItaly} title={$_("label.of-italy")} />
+    <BigNumber value={format($locale, ".1%", data.area.ofItaly)} title={$_("label.of-italy")} />
     <FillMap country="italy" p=.653 />
-    <BigNumber value={data.area.ofEngland} title={$_("label.of-england")} />
+    <BigNumber value={format($locale, ".1%", data.area.ofEngland)} title={$_("label.of-england")} />
     <FillMap country="unitedKingdom" p=.9407 />
   
     <Text index=103>{$_("chart-title.people-affected")}</Text>
   
-    <BigNumber value={data.people.affected} title={$_("label.people")} size="l" />
+    <BigNumber value={format($locale, ",", data.people.affected)} title={$_("label.people")} size="l" />
   
-    <BigNumber value={data.people.ofBarcelona} title={$_("label.of-barcelona-population")} />
-    <BigNumber value={data.people.ofRome} title={$_("label.of-rome-population")} />
-    <BigNumber value={data.people.ofParis} title={$_("label.of-paris-population")} />
+    <BigNumber value={format($locale, ".1%", data.people.ofBarcelona)} title={$_("label.of-barcelona-population")} />
+    <BigNumber value={format($locale, ".1%", data.people.ofRome)} title={$_("label.of-rome-population")} />
+    <BigNumber value={format($locale, ".1%", data.people.ofParis)} title={$_("label.of-paris-population")} />
   
-    <BigNumber value={data.people.inShelters} title={$_("label.in-shelters-people-or")} size="l" />
+    <BigNumber value={format($locale, ",", data.people.inShelters)} title={$_("label.in-shelters-people-or")} size="l" />
   
-    <BigNumber value={data.people.displaced} title={$_("label.displaced-people")} />
-    <BigNumber value={data.people.affected} title={$_("label.affected-people")} />
-    <BigNumber value={data.people.injured} title={$_("label.injured-people")} />
-    <BigNumber value={data.people.missing} title={$_("label.missing-people")} />
-    <BigNumber value={data.people.dead} title={$_("label.dead-people")} />
+    <BigNumber value={format($locale, ",", data.people.displaced)} title={$_("label.displaced-people")} />
+    <BigNumber value={format($locale, ",", data.people.affected)} title={$_("label.affected-people")} />
+    <BigNumber value={format($locale, ",", data.people.injured)} title={$_("label.injured-people")} />
+    <BigNumber value={format($locale, ",", data.people.missing)} title={$_("label.missing-people")} />
+    <BigNumber value={format($locale, ",", data.people.dead)} title={$_("label.dead-people")} />
   
-    
     <Text index=18>{$_("p.18")}</Text>
     <Text index=19>{$_("p.19")}</Text>
   
