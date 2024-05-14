@@ -5,3 +5,7 @@
 <p id="text-{index}" class="text">
   <slot />
 </p>
+
+<style>
+
+</style>

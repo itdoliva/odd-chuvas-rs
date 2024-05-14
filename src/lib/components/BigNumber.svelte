@@ -1,4 +1,5 @@
 <script>
+  export let index
   export let value
   export let title
   export let size = 'm'
@@ -10,7 +11,7 @@
 </script>
 
 
-<div class="big-number {size}">
+<div id="ban-{index}" class="big-number {size}">
 
   <svelte:element this={sizeMap[size]} class="big-number__value">
     {value}
