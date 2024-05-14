@@ -87,8 +87,16 @@ function slide600() {
   const tl = timeline("#ss-600", nEls)
 
   tl.from("#ban-611", { opacity: 0, yPercent: 20 })
+  tl.from("#pc-620", { opacity: 0, scale: 1.12 }, "<")
+  tl.to("#pc-620", { opacity: 0 }, ">90%")
+
   tl.from("#ban-612", { opacity: 0, yPercent: 20 })
+  tl.from("#pc-630", { opacity: 0, scale: 1.12 }, "<")
+  tl.to("#pc-630", { opacity: 0 }, ">90%")
+
   tl.from("#ban-613", { opacity: 0, yPercent: 20 })
+  tl.from("#pc-640", { opacity: 0, scale: 1.12 }, "<")
+
 }
 
 

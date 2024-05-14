@@ -10,6 +10,7 @@
   import Text from "$lib/components/Text.svelte";
   import BigNumber from "$lib/components/BigNumber.svelte";
   import FillMap from "$lib/components/FillMap.svelte";
+  import List from "$lib/components/List.svelte";
 
   // Functions
   import format from "$lib/format"
@@ -28,7 +29,7 @@
     <SlideSection index=100>
 
       <svelte:fragment slot="header">
-        <Headline>{@html $_("headline.1")}</Headline>
+        <Headline index=101>{@html $_("headline.1")}</Headline>
       </svelte:fragment>
 
       <svelte:fragment slot="body">
@@ -63,7 +64,7 @@
     <SlideSection index=300>
       <svelte:fragment slot="header">
         <Headline>{@html $_("headline.1")}</Headline>
-        <Text>{$_("note.1")}</Text>
+        <Text size="s">{$_("note.1")}</Text>
       </svelte:fragment>
 
       <svelte:fragment slot="body">
@@ -82,8 +83,10 @@
 
         <PanelContent index=340>
           <Text>{$_("p.10")}</Text>
-          <Text>{$_("p.11")}</Text>
-          <Text>{$_("p.12")}</Text>
+          <List>
+            <Text>{$_("p.11")}</Text>
+            <Text>{$_("p.12")}</Text>
+          </List>
         </PanelContent>
 
         <PanelContent index=350>
@@ -130,9 +133,11 @@
 
       <svelte:fragment slot="body">
         <PanelContent index=510>
-          <BigNumber index=511 value={format($locale, ",", data.area.cities)} title={$_("label.cities")} />
-          <BigNumber index=512 value="{format($locale, ",", data.area.total)} km2" title="({$_("label.total-area")})" />
-          <BigNumber index=513 value="{format($locale, ",", data.area.affected)} km2" title="({$_("label.affected-area")} ~ {format($locale, ".0%", data.area.affected / data.area.total)})" />
+          <List>
+            <BigNumber index=511 value={format($locale, ",", data.area.cities)} title={$_("label.cities")} />
+            <BigNumber index=512 value="{format($locale, ",", data.area.total)} km2" title="({$_("label.total-area")})" />
+            <BigNumber index=513 value="{format($locale, ",", data.area.affected)} km2" title="({$_("label.affected-area")} ~ {format($locale, ".0%", data.area.affected / data.area.total)})" />
+          </List>
         </PanelContent>
       </svelte:fragment>
 
@@ -147,14 +152,25 @@
 
       <svelte:fragment slot="body">
         <PanelContent index=610>
-          <BigNumber index=611 value={format($locale, ".1%", data.area.ofSpain)} title={$_("label.of-spain")} />
-          <BigNumber index=612 value={format($locale, ".1%", data.area.ofItaly)} title={$_("label.of-italy")} />
-          <BigNumber index=613 value={format($locale, ".1%", data.area.ofEngland)} title={$_("label.of-england")} />
+          <List>
+            <BigNumber index=611 value={format($locale, ".1%", data.area.ofSpain)} title={$_("label.of-spain")} />
+            <BigNumber index=612 value={format($locale, ".1%", data.area.ofItaly)} title={$_("label.of-italy")} />
+            <BigNumber index=613 value={format($locale, ".1%", data.area.ofEngland)} title={$_("label.of-england")} />
+          </List>
+        </PanelContent>
 
+        <PanelContent index=620 zIndex=4 top={false} left={false} bottom=0 right=0 height="60%" width="84%">
           <FillMap country="spain" p=.389 />
+        </PanelContent>
+
+        <PanelContent index=630 zIndex=4 top={false} left={false} bottom=0 right=0 height="60%" width="84%">
           <FillMap country="italy" p=.653 />
+        </PanelContent>
+
+        <PanelContent index=640 zIndex=4 top={false} left={false} bottom=0 right=0 height="60%" width="84%">
           <FillMap country="unitedKingdom" p=.9407 /> 
         </PanelContent>
+
       </svelte:fragment>
 
     </SlideSection>
@@ -169,9 +185,11 @@
 
       <svelte:fragment slot="body">
         <PanelContent index=710>
-          <BigNumber index=711 value={format($locale, ".1%", data.people.ofBarcelona)} title={$_("label.of-barcelona-population")} />
-          <BigNumber index=712 value={format($locale, ".1%", data.people.ofRome)} title={$_("label.of-rome-population")} />
-          <BigNumber index=713 value={format($locale, ".1%", data.people.ofParis)} title={$_("label.of-paris-population")} />
+          <List>
+            <BigNumber index=711 value={format($locale, ".1%", data.people.ofBarcelona)} title={$_("label.of-barcelona-population")} />
+            <BigNumber index=712 value={format($locale, ".1%", data.people.ofRome)} title={$_("label.of-rome-population")} />
+            <BigNumber index=713 value={format($locale, ".1%", data.people.ofParis)} title={$_("label.of-paris-population")} />
+          </List>
         </PanelContent>
       </svelte:fragment>
 
@@ -186,11 +204,13 @@
 
       <svelte:fragment slot="body">
         <PanelContent index=810>
-          <BigNumber index=811 value={format($locale, ",", data.people.displaced)} title={$_("label.displaced-people")} />
-          <BigNumber index=812 value={format($locale, ",", data.people.affected)} title={$_("label.affected-people")} />
-          <BigNumber index=813 value={format($locale, ",", data.people.injured)} title={$_("label.injured-people")} />
-          <BigNumber index=814 value={format($locale, ",", data.people.missing)} title={$_("label.missing-people")} />
-          <BigNumber index=815 value={format($locale, ",", data.people.dead)} title={$_("label.dead-people")} />
+          <List>
+            <BigNumber index=811 value={format($locale, ",", data.people.displaced)} title={$_("label.displaced-people")} />
+            <BigNumber index=812 value={format($locale, ",", data.people.affected)} title={$_("label.affected-people")} />
+            <BigNumber index=813 value={format($locale, ",", data.people.injured)} title={$_("label.injured-people")} />
+            <BigNumber index=814 value={format($locale, ",", data.people.missing)} title={$_("label.missing-people")} />
+            <BigNumber index=815 value={format($locale, ",", data.people.dead)} title={$_("label.dead-people")} />
+          </List>
         </PanelContent>
       </svelte:fragment>
 
@@ -214,10 +234,11 @@
 
 <style lang="scss">
   .app {
-    padding: 0 var(--fs-default);
 
     article {
       position: relative;
+      z-index: 1;
+
       max-width: 768px;
       margin: 0 auto;
     }

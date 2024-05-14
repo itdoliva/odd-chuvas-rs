@@ -21,6 +21,7 @@
     }
   }
 
+  export let index
   export let country
   export let p
 
@@ -35,7 +36,7 @@
 
 </script>
 
-<svg class="map" {width} {height} viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg id="fm-{index}" class="map" width="100%" height="100%" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <path id={mapId} {d} />
   </defs>

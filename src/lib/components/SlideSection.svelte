@@ -15,7 +15,6 @@
       <slot name="body"/>
     </div>
   {/if}
-
 </section>
 
 <style lang="scss">
@@ -23,18 +22,23 @@
     height: 100vh;
     height: 100svh;
 
-    padding: calc(var(--fs-default)*3.2) 0;
+    padding: calc(var(--fs-default)*3.2) calc(1.6*var(--fs-default));
 
     display: grid;
-    grid-auto-flow: row;
-    grid-auto-rows: max-content;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: 
+      "header"
+      "body";
+    row-gap: calc(var(--fs-default)*2.4);
 
     &__header {
-
+      position: relative;
+      grid-area: header;
     }
 
     &__body {
       position: relative;
+      grid-area: body;
     }
   }
 </style>

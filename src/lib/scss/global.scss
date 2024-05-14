@@ -10,28 +10,14 @@
   --ff-default: "Public Sans";
   --ff-headline: "Erode";
 
-  --fs-default: 26px;
+  --fs-default: 24px;
+  --fs-note: 16px;
 }
 
 *, 
 *::after, 
 *::before {
   box-sizing: border-box;
-}
-
-
-h1, h2, h3, h4, h5 {
-  font-family: var(--ff-headline);
-  font-weight: 600;
-  margin: 0;
-}
-
-h2 {
-  font-size: 80px;
-}
-
-h3 {
-  font-size: 58px;
 }
 
 body {
@@ -44,6 +30,28 @@ body {
   font-family: var(--ff-default);
   color: var(--clr-primary);
   font-size: var(--fs-default);
+  line-height: 130%;
+}
+
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--ff-headline);
+  font-weight: 600;
+  margin: 0;
+  line-height: 90%;
+}
+
+
+h1 {
+  font-size: 80px;
+}
+
+h2 {
+  font-size: calc(2.8*var(--fs-default));
+}
+
+h3 {
+  font-size: 58px;
 }
 
 ul {

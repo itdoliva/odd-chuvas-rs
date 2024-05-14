@@ -1,7 +1,10 @@
 <script>
   export let index
+  export let align = "center"
 </script>
 
-<h1 id="hl-{index}" class="headline">
+<h2 id="hl-{index}" class="headline"
+  style:text-align={align}
+>
   <slot/>
-</h1>
+</h2>
