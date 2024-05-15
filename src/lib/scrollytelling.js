@@ -1,5 +1,6 @@
 import { gsap } from '$lib/gsap';
 
+
 export default function initTimelines() {
   slide100()
   slide300()
@@ -18,15 +19,22 @@ function timeline(trigger, nEls) {
       scrub: 1,
       pin: true,
       trigger, 
-      end: `+=${nEls*100}%`, 
+      end: `+=${nEls*40}%`, 
     }
   })
 }
 
 function slide100() {
+  gsap.from("#hl-101", { scale: 1.1, opacity: 0, yPercent: -12, duration: 2, ease: "power2.out" })
+  gsap.from("#clouds-102 .cloud-1", { scale: 1.1, opacity: 0, yPercent: 10, xPercent: -60, duration: 5, ease: "power2.out" })
+  gsap.from("#clouds-102 .cloud-2", { scale: 1.1, opacity: 0, yPercent: 10, xPercent: -40, duration: 5, ease: "power2.out" })
+  gsap.from("#clouds-102 .cloud-3", { scale: 1.1, opacity: 0, yPercent: 10, xPercent: 30, duration: 5, ease: "power2.out" })
+  gsap.from("#clouds-102 .cloud-4", { scale: 1.1, opacity: 0, yPercent: 10, xPercent: 24, duration: 5, ease: "power2.out" })
+  gsap.from("#clouds-102 .cloud-5", { scale: 1.1, opacity: 0, yPercent: 10, xPercent: 90, duration: 5, ease: "power2.out" })
+
   const nEls = 4
   const tl = timeline("#ss-100", nEls)
-
+  
   tl.from("#pc-110", { opacity: 0, yPercent: 20 })
   tl.to("#pc-110", { opacity: 0, yPercent: -20 }, ">50%")
 

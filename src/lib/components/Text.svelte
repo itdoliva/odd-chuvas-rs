@@ -3,7 +3,7 @@
   export let size = 'm'
 </script>
 
-<p id="text-{index}" class="text {size}">
+<p id="text-{index}" class="text padded {size}">
   <slot />
 </p>
 

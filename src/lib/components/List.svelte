@@ -2,7 +2,7 @@
   export let index
 </script>
 
-<div id="list-{index}" class="list">
+<div id="list-{index}" class="list padded">
   <slot />
 </div>
 

@@ -19,10 +19,12 @@
 
 <style lang="scss">
   .slide-section {
+    overflow: hidden;
+    
     height: 100vh;
     height: 100svh;
 
-    padding: calc(var(--fs-default)*3.2) calc(1.6*var(--fs-default));
+    padding: calc(var(--fs-default)*3.2) 0;
 
     display: grid;
     grid-template-rows: max-content 1fr;

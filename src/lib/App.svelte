@@ -11,6 +11,7 @@
   import BigNumber from "$lib/components/BigNumber.svelte";
   import FillMap from "$lib/components/FillMap.svelte";
   import List from "$lib/components/List.svelte";
+  import Clouds from "$lib/components/Clouds.svelte";
 
   // Functions
   import format from "$lib/format"
@@ -29,6 +30,7 @@
     <SlideSection index=100>
 
       <svelte:fragment slot="header">
+        <Clouds index=102/>
         <Headline index=101>{@html $_("headline.1")}</Headline>
       </svelte:fragment>
 
@@ -180,7 +182,9 @@
 
       <svelte:fragment slot="header">
         <Text>{$_("chart-title.people-affected")}</Text>
-        <BigNumber index=701 value={format($locale, ",", data.people.affected)} title={$_("label.people")} size="l" />
+        <Text>
+          <BigNumber index=701 value={format($locale, ",", data.people.affected)} title={$_("label.people")} size="l" />
+        </Text>
       </svelte:fragment> 
 
       <svelte:fragment slot="body">
@@ -199,7 +203,9 @@
     <SlideSection index=800>
 
       <svelte:fragment slot="header">
-        <BigNumber index=801 value={format($locale, ",", data.people.inShelters)} title={$_("label.in-shelters-people-or")} size="l" />
+        <Text>
+          <BigNumber index=801 value={format($locale, ",", data.people.inShelters)} title={$_("label.in-shelters-people-or")} size="l" />
+        </Text>
       </svelte:fragment>
 
       <svelte:fragment slot="body">
@@ -234,6 +240,7 @@
 
 <style lang="scss">
   .app {
+    width: 100%;
 
     article {
       position: relative;
