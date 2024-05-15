@@ -10,6 +10,7 @@
   import Text from "$lib/components/Text.svelte";
   import BigNumber from "$lib/components/BigNumber.svelte";
   import FillMap from "$lib/components/FillMap.svelte";
+  import FillSquare from "$lib/components/FillSquare.svelte";
   import List from "$lib/components/List.svelte";
   import Clouds from "$lib/components/Clouds.svelte";
 
@@ -122,6 +123,9 @@
       </svelte:fragment>
 
       <svelte:fragment slot="body">
+        <PanelContent index={410}>
+          <FillSquare p={data.cities.affected / data.cities.total}/>
+        </PanelContent>
       </svelte:fragment>
 
     </SlideSection>
