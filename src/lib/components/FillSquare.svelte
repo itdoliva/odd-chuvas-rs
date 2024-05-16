@@ -13,7 +13,7 @@
 
   onMount(() => {
     setInterval(() => {
-      offset += Math.PI * .015
+      offset += Math.PI * .03
     }, 50)
   })
 
@@ -27,7 +27,7 @@
 
 
   function makeD(size, height, offset) {
-    const amplitude = 4 + Math.sin(offset); // height of each wave
+    const amplitude = 8*Math.sin(offset/2); // height of each wave
     const frequency = 2.4; // frequency of the waves (how many waves)
 
     const y = size - height
@@ -64,28 +64,46 @@
       <use href="#{sqrId}" fill="white" />
     </mask>
 
-    <use class="fill-square__background" href="#{sqrId}" x=0 y=0 />
-
-    <path class="fill-square__bar" d={d}  mask="url(#{mskId})"/>
+    <g class="square">
+      <use class="square__background" href="#{sqrId}" x=0 y=0 />
+      <path class="square__bar" d={d}  mask="url(#{mskId})"/>
+    </g>
 
   </svg>
 
+  <div class="label">
+    <slot />
+  </div>
 
 </div>
 
 <style lang="scss">
   .fill-square {
+    position: relative;
+    overflow: hidden;
+
     width: 100%;
     aspect-ratio: 1/1;
 
     margin: auto;
 
-    &__background {
-      fill: var(--clr-primary);
+    svg {
+      .square {
+        &__background {
+          fill: var(--clr-secondary);
+        }
+        
+        &__bar {
+          fill: var(--clr-primary);
+        }
+      }
     }
 
-    &__bar {
-      fill: var(--clr-secondary);
+    .label {
+      position: absolute;
+      left: var(--fs-default);
+      bottom: var(--fs-default);
     }
+
   }
 </style>

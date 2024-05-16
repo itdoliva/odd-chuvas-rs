@@ -3,6 +3,7 @@
   export let value
   export let title
   export let size = 'm'
+  export let color = "var(--clr-primary)"
 
   const sizeMap = {
     l: "h2",
@@ -11,7 +12,7 @@
 </script>
 
 
-<div id="ban-{index}" class="big-number {size}">
+<div id="ban-{index}" class="big-number {size}" style:--clr={color}>
 
   <svelte:element this={sizeMap[size]} class="big-number__value">
     {value}
@@ -32,6 +33,7 @@
     &__value,
     &__title {
       text-align: inherit;
+      color: var(--clr);
     }
 
     &__title {

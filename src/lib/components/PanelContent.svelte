@@ -8,6 +8,7 @@
   export let width = "100%"
   export let height = false
   export let zIndex = 5
+  export let padded = false
 
   const isPositioned = position !== "relative"
 </script>
@@ -15,6 +16,7 @@
 <div 
   id="pc-{index}" 
   class="panel-content" 
+  class:padded
   style:position
   style:top={isPositioned && top}
   style:right={isPositioned && right}

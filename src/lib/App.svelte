@@ -119,12 +119,14 @@
     <SlideSection index=400>
 
       <svelte:fragment slot="header">
-        <Text>{$_("chart-title.flooded-cities-pct")}</Text>
+        <Text>{$_("chart-title.flooded-cities-pct").replace("${1}", data.cities.total).replace("${2}", data.cities.affected)}</Text>
       </svelte:fragment>
 
       <svelte:fragment slot="body">
-        <PanelContent index={410}>
-          <FillSquare p={data.cities.affected / data.cities.total}/>
+        <PanelContent index=410 padded={true} position="relative">
+          <FillSquare p={data.cities.affected / data.cities.total}>
+            <BigNumber index=412 value={format($locale, ".1%", data.cities.affected / data.cities.total)} title={$_("label.of-cities")} color="var(--clr-on-light-background)"/>
+          </FillSquare>
         </PanelContent>
       </svelte:fragment>
 
