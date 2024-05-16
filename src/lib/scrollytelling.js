@@ -1,4 +1,5 @@
 import { gsap } from '$lib/gsap';
+import { yearMaxRainMT } from "$lib/store/command"
 
 
 export default function initTimelines() {
@@ -9,6 +10,8 @@ export default function initTimelines() {
   slide700()
   slide800()
   slide900()
+
+  // slide1100()
 }
 
   
@@ -96,11 +99,11 @@ function slide600() {
 
   tl.from("#ban-611", { opacity: 0, yPercent: 20 })
   tl.from("#pc-620 .map svg", { opacity: 0, xPercent: 12, yPercent: 12, scale: 1.12 }, "<")
-  tl.to("#pc-620 .map svg", { opacity: 0, scale: .97 }, ">90%")
+  tl.to("#pc-620 .map svg", { opacity: 0, scale: .97, xPercent: -4, yPercent: -4 }, ">90%")
 
   tl.from("#ban-612", { opacity: 0, yPercent: 20 })
   tl.from("#pc-630 .map svg", { opacity: 0, xPercent: 12, yPercent: 12, scale: 1.12 }, "<")
-  tl.to("#pc-630 .map svg", { opacity: 0, scale: .97 }, ">90%")
+  tl.to("#pc-630 .map svg", { opacity: 0, scale: .97, xPercent: -4, yPercent: -4 }, ">90%")
 
   tl.from("#ban-613", { opacity: 0, yPercent: 20 })
   tl.from("#pc-640 .map svg", { opacity: 0, xPercent: 12, yPercent: 12, scale: 1.12  }, "<")
@@ -136,4 +139,13 @@ function slide900() {
   tl.to("#pc-910", { opacity: 0, yPercent: -20 }, ">50%")
 
   tl.from("#pc-920", { opacity: 0, yPercent: 20 }, "<90%")
+}
+
+function slide1100() {
+  const nEls = 4
+  const tl = timeline("#ss-1100", nEls)
+
+  tl.from("#rdc-1101 .domain", { x1: 0, x2: 0 })
+
+
 }

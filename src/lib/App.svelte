@@ -13,6 +13,10 @@
   import FillSquare from "$lib/components/FillSquare.svelte";
   import List from "$lib/components/List.svelte";
   import Clouds from "$lib/components/Clouds.svelte";
+	import RaindropChart from '$lib/components/RaindropChart.svelte';
+
+  // Store
+  import { yearMaxRainMT } from "$lib/store/command"
 
   // Functions
   import format from "$lib/format"
@@ -28,6 +32,8 @@
 
 <main class="app">
   <article class="timeline">
+
+
     <SlideSection index=100>
 
       <svelte:fragment slot="header">
@@ -61,6 +67,19 @@
       <svelte:fragment slot="header">
         <Headline index=210>{$_("headline.2")}</Headline>
       </svelte:fragment>
+    </SlideSection>
+
+
+    <SlideSection index=1100>
+
+      <svelte:fragment slot="header">
+        <Headline index=1110>{$_("headline.2")}</Headline>
+      </svelte:fragment>
+
+      <svelte:fragment slot="body">
+        <RaindropChart index=1101 data={data.yearsMaxMT} xShowTo={$yearMaxRainMT} />
+      </svelte:fragment>
+
     </SlideSection>
     
 
