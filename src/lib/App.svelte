@@ -138,13 +138,11 @@
       </svelte:fragment>
 
       <svelte:fragment slot="body">
-        <PanelContent index=510>
-          <List>
-            <BigNumber index=511 value={format($locale, ",", data.area.cities)} title={$_("label.cities")} />
-            <BigNumber index=512 value="{format($locale, ",", data.area.total)} km2" title="({$_("label.total-area")})" />
-            <BigNumber index=513 value="{format($locale, ",", data.area.affected)} km2" title="({$_("label.affected-area")} ~ {format($locale, ".0%", data.area.affected / data.area.total)})" />
-          </List>
-        </PanelContent>
+        <List>
+          <BigNumber index=511 value={format($locale, ",", data.area.cities)} title={$_("label.cities")} />
+          <BigNumber index=512 value="{format($locale, ",", data.area.total)} km2" title="({$_("label.total-area")})" />
+          <BigNumber index=513 value="{format($locale, ",", data.area.affected)} km2" title="({$_("label.affected-area")} ~ {format($locale, ".0%", data.area.affected / data.area.total)})" />
+        </List>
       </svelte:fragment>
 
     </SlideSection>
@@ -157,23 +155,21 @@
       </svelte:fragment>
 
       <svelte:fragment slot="body">
-        <PanelContent index=610>
-          <List>
-            <BigNumber index=611 value={format($locale, ".1%", data.area.ofSpain)} title={$_("label.of-spain")} />
-            <BigNumber index=612 value={format($locale, ".1%", data.area.ofItaly)} title={$_("label.of-italy")} />
-            <BigNumber index=613 value={format($locale, ".1%", data.area.ofEngland)} title={$_("label.of-england")} />
-          </List>
-        </PanelContent>
+        <List index=610>
+          <BigNumber index=611 value={format($locale, ".1%", data.area.ofSpain)} title={$_("label.of-spain")} />
+          <BigNumber index=612 value={format($locale, ".1%", data.area.ofItaly)} title={$_("label.of-italy")} />
+          <BigNumber index=613 value={format($locale, ".1%", data.area.ofEngland)} title={$_("label.of-england")} />
+        </List>
 
-        <PanelContent index=620 zIndex=4 top={false} left={false} bottom=0 right=0 height="60%" width="84%">
+        <PanelContent index=620 height="100%" zIndex=4>
           <FillMap country="spain" p=.389 />
         </PanelContent>
 
-        <PanelContent index=630 zIndex=4 top={false} left={false} bottom=0 right=0 height="60%" width="84%">
+        <PanelContent index=630 height="100%" zIndex=4>
           <FillMap country="italy" p=.653 />
         </PanelContent>
 
-        <PanelContent index=640 zIndex=4 top={false} left={false} bottom=0 right=0 height="60%" width="84%">
+        <PanelContent index=640 height="100%" zIndex=4>
           <FillMap country="unitedKingdom" p=.9407 /> 
         </PanelContent>
 
@@ -192,13 +188,11 @@
       </svelte:fragment> 
 
       <svelte:fragment slot="body">
-        <PanelContent index=710>
-          <List>
-            <BigNumber index=711 value={format($locale, ".1%", data.people.ofBarcelona)} title={$_("label.of-barcelona-population")} />
-            <BigNumber index=712 value={format($locale, ".1%", data.people.ofRome)} title={$_("label.of-rome-population")} />
-            <BigNumber index=713 value={format($locale, ".1%", data.people.ofParis)} title={$_("label.of-paris-population")} />
-          </List>
-        </PanelContent>
+        <List index=710>
+          <BigNumber index=711 value={format($locale, ".1%", data.people.ofBarcelona)} title={$_("label.of-barcelona-population")} />
+          <BigNumber index=712 value={format($locale, ".1%", data.people.ofRome)} title={$_("label.of-rome-population")} />
+          <BigNumber index=713 value={format($locale, ".1%", data.people.ofParis)} title={$_("label.of-paris-population")} />
+        </List>
       </svelte:fragment>
 
     </SlideSection>

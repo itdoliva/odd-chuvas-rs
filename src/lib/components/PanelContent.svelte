@@ -1,6 +1,6 @@
 <script>
   export let index
-
+  export let position = "absolute"
   export let top = 0
   export let right = false
   export let bottom = false
@@ -8,15 +8,20 @@
   export let width = "100%"
   export let height = false
   export let zIndex = 5
+
+  const isPositioned = position !== "relative"
 </script>
 
-<div id="pc-{index}" class="panel-content"
-  style:top
-  style:right
-  style:bottom
-  style:left
+<div 
+  id="pc-{index}" 
+  class="panel-content" 
+  style:position
+  style:top={isPositioned && top}
+  style:right={isPositioned && right}
+  style:bottom={isPositioned && bottom}
+  style:left={isPositioned && left}
   style:width
-  style:height
+  style:height  
   style:z-index={zIndex}
 >
   <slot />
@@ -24,6 +29,5 @@
 
 <style lang="scss">
   .panel-content {
-    position: absolute;
   }
 </style>

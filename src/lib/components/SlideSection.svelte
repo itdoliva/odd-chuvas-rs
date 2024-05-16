@@ -19,8 +19,6 @@
 
 <style lang="scss">
   .slide-section {
-    overflow: hidden;
-    
     height: 100vh;
     height: 100svh;
 
