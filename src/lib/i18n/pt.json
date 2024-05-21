@@ -16,6 +16,7 @@
     }
   },
   "label": {
+    "state-precipitation-moving-total": "data from a 7-day moving total",
     "cities": "municípios",
     "people": "pessoas",
     "total-area": "área total",

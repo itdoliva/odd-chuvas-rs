@@ -91,6 +91,10 @@
     <SlideSection index=1000>
 
       <svelte:fragment slot="header">
+        <PanelContent position="relative">
+          <Text size="s" color="var(--clr-annot)">{$_("label.state-precipitation-moving-total")}</Text>
+        </PanelContent>
+
         <Block height="22.5vh">
 
           <PanelContent index=1010>
