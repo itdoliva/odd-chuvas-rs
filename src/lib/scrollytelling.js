@@ -5,6 +5,7 @@ import { yearMaxRainMT } from "$lib/store/command"
 
 
 export default function initTimelines() {
+  setup()
   slide100()
   slide1000()
   slide300()
@@ -33,6 +34,10 @@ function timeline(trigger, nEls, scrollOpts={}) {
   })
 }
 
+function setup() {
+  gsap.set("#ctbg-1 .city-layer", { yPercent: 100 })
+}
+
 function slide100() {
   gsap.from("#hl-101", { scale: 1.1, opacity: 0, yPercent: -12, duration: 2, ease: "power2.out" })
   gsap.from("#clouds-102 .cloud-1", { scale: 1.1, opacity: 0, yPercent: 10, xPercent: -60, duration: 5, ease: "power2.out" })
@@ -56,7 +61,6 @@ function slide100() {
   tl.from("#pc-140", { opacity: 0, yPercent: 20 }, "<90%")
 
 }
-
 
 function slide300() {
   const nEls = 9
@@ -116,7 +120,6 @@ function slide600() {
 
 }
 
-
 function slide700() {
   const nEls = 3
   const tl = timeline("#ss-700", nEls)
@@ -157,6 +160,8 @@ function slide1000() {
   tl.to("#rdc-1001 .x-axis .domain", { strokeDashoffset: 0 }, "<")
   tl.from("#rdc-1001 .x-axis .tick.ordinary", { opacity: 0, stagger: .1 }, "<")
   tl.from("#rdc-1001 .x-axis .tick.special", { opacity: 0 }, "<")
+
+  tl.to("#ctbg-1 .city-layer.layer1", { yPercent: 0 }, "<")
 
   const seekYear = (prevYear, nextYear) => () => tl.scrollTrigger.direction === 1 
     ? yearMaxRainMT.set(nextYear)

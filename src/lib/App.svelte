@@ -19,6 +19,7 @@
 	import RaindropChart from '$lib/components/RaindropChart.svelte';
 
   import Clouds from "$lib/components/Clouds.svelte";
+  import CityBackground from "$lib/components/CityBackground.svelte";
 
   // Store
   import { yearMaxRainMT } from "$lib/store/command"
@@ -302,18 +303,38 @@
     </SlideSection>
 
   </article>
+
+  <aside class="background">
+    <CityBackground index=1/>
+  </aside>
 </main>
 
 <style lang="scss">
   .app {
+    position: relative;
     width: 100%;
+
+    article,
+    aside.background {
+      max-width: 768px;
+      margin: 0 auto;
+    }
 
     article {
       position: relative;
       z-index: 1;
 
-      max-width: 768px;
-      margin: 0 auto;
+    }
+
+    aside.background {
+      overflow: hidden;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      z-index: 0;
     }
   }
 </style>

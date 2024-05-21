@@ -6,7 +6,7 @@
 
 	import Drop from '$lib/icons/Drop.svelte';
 	import Cloud from '$lib/icons/Cloud.svelte';
-    import { fly } from 'svelte/transition';
+  import { fly } from 'svelte/transition';
 
   export let index = crypto.randomUUID() 
   

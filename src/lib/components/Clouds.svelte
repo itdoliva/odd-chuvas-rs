@@ -69,6 +69,7 @@
 <style lang="scss">
   .clouds {
     max-height: 25vh;
+    
     svg {
       max-height: 100%;
       overflow: visible;
