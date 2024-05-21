@@ -186,6 +186,6 @@ function slide1000() {
   tl.from("#pc-1040", { opacity: 0, yPercent: 20 }, "<")
 
   // The below animation just holds the pin for a while
-  tl.to("#pc-1040", { opacity: 1 }, "+=2")
+  tl.to("#ctbg-1 .city-layer.layer1", { yPercent: 100 }, "+=2")
 
 }
