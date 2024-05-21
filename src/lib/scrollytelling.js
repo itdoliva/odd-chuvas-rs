@@ -1,28 +1,34 @@
+import * as d3 from "d3"
 import { gsap } from '$lib/gsap';
+
 import { yearMaxRainMT } from "$lib/store/command"
 
 
 export default function initTimelines() {
   slide100()
+  slide1000()
   slide300()
   slide500()
   slide600()
   slide700()
   slide800()
   slide900()
+}
 
-  // slide1100()
+function rangeSelector(n1, n2, prefix) {
+  return d3.range(n1, n2 + 1).map(n => `.${prefix}${n}`)
 }
 
   
-function timeline(trigger, nEls) {
+function timeline(trigger, nEls, scrollOpts={}) {
   return gsap.timeline({
     scrollTrigger: {
       start: 'top top',
-      scrub: 1,
+      scrub: .3,
       pin: true,
       trigger, 
       end: `+=${nEls*40}%`, 
+      ...scrollOpts
     }
   })
 }
@@ -141,11 +147,40 @@ function slide900() {
   tl.from("#pc-920", { opacity: 0, yPercent: 20 }, "<90%")
 }
 
-function slide1100() {
-  const nEls = 4
-  const tl = timeline("#ss-1100", nEls)
+function slide1000() {
+  const nEls = 10
+  const tl = timeline("#ss-1000", nEls)
 
-  tl.from("#rdc-1101 .domain", { x1: 0, x2: 0 })
+  tl.from("#rdc-1001 .x-axis__clouds .cloud.left .cloud-path", { xPercent: () => (-20 + Math.random() * 12), yPercent: () => Math.random() * 24, opacity: 0 })
+  tl.from("#rdc-1001 .x-axis__clouds .cloud.right .cloud-path", { xPercent: () => 20 + Math.random() * 12, yPercent: () => Math.random() * 24, opacity: 0 }, "<")
 
+  tl.to("#rdc-1001 .x-axis .domain", { strokeDashoffset: 0 }, "<")
+  tl.from("#rdc-1001 .x-axis .tick.ordinary", { opacity: 0, stagger: .1 }, "<")
+  tl.from("#rdc-1001 .x-axis .tick.special", { opacity: 0 }, "<")
+
+  const seekYear = (prevYear, nextYear) => () => tl.scrollTrigger.direction === 1 
+    ? yearMaxRainMT.set(nextYear)
+    : yearMaxRainMT.set(prevYear)
+
+  // 2009 (#pc-1010)
+  tl.add(seekYear(false, 2009), "+=3")
+  
+  // 2016 (#pc-1020)
+  tl.add(seekYear(2009, 2016), "+=3")
+  tl.to("#pc-1010", { opacity: 0, yPercent: -20 }, ">90%")
+  tl.from("#pc-1020", { opacity: 0, yPercent: 20 }, "<")
+  
+  // 2023 (#pc-1030)
+  tl.add(seekYear(2016, 2023), "+=3")
+  tl.to("#pc-1020", { opacity: 0, yPercent: -20 }, ">90%")
+  tl.from("#pc-1030", { opacity: 0, yPercent: 20 }, "<")
+  
+  // 2024 (#pc-1040)
+  tl.add(seekYear(2023, 2024), "+=3")
+  tl.to("#pc-1030", { opacity: 0, yPercent: -20 }, ">90%")
+  tl.from("#pc-1040", { opacity: 0, yPercent: 20 }, "<")
+
+  // The below animation just holds the pin for a while
+  tl.to("#pc-1040", { opacity: 1 }, "+=2")
 
 }

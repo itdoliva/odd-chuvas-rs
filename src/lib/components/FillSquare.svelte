@@ -2,7 +2,7 @@
   import { onMount } from "svelte"; 
   import * as d3 from "d3"
 
-  export let index
+  export let index = crypto.randomUUID()
   export let p
 
   const sqrId = crypto.randomUUID()

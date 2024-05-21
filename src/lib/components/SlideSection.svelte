@@ -1,5 +1,5 @@
 <script>
-  export let index
+  export let index = crypto.randomUUID()
 </script>
 
 <section id="ss-{index}" class="slide-section">
@@ -31,13 +31,17 @@
       "body";
     row-gap: calc(var(--fs-default)*2.4);
 
-    &__header {
+    &__header,
+    &__body {
+      width: 100%;
       position: relative;
+    }
+
+    &__header {
       grid-area: header;
     }
 
     &__body {
-      position: relative;
       grid-area: body;
     }
   }

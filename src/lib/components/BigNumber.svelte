@@ -1,5 +1,5 @@
 <script>
-  export let index
+  export let index = crypto.randomUUID()
   export let value
   export let title
   export let size = 'm'

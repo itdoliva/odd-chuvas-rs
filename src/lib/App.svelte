@@ -6,33 +6,50 @@
   // Components
   import SlideSection from "$lib/components/SlideSection.svelte";
   import PanelContent from "$lib/components/PanelContent.svelte";
+  import List from "$lib/components/List.svelte";
+	import Block from '$lib/components/Block.svelte';
+
   import Headline from "$lib/components/Headline.svelte";
+  import ChartTitle from "$lib/components/ChartTitle.svelte";
   import Text from "$lib/components/Text.svelte";
+
   import BigNumber from "$lib/components/BigNumber.svelte";
   import FillMap from "$lib/components/FillMap.svelte";
   import FillSquare from "$lib/components/FillSquare.svelte";
-  import List from "$lib/components/List.svelte";
-  import Clouds from "$lib/components/Clouds.svelte";
 	import RaindropChart from '$lib/components/RaindropChart.svelte';
+
+  import Clouds from "$lib/components/Clouds.svelte";
 
   // Store
   import { yearMaxRainMT } from "$lib/store/command"
+  import { width } from "$lib/store/dimensions"
 
   // Functions
   import format from "$lib/format"
   import initTimelines from "$lib/scrollytelling";
+  import Carousel from './components/Carousel.svelte';
+  import CarouselPage from './components/CarouselPage.svelte';
 
   export let data
 
+  
+  const maxMT = {
+    y2009: data.yearsMaxMT.find(d => d.year === 2009).maxMT,
+    y2016: data.yearsMaxMT.find(d => d.year === 2016).maxMT,
+    y2023: data.yearsMaxMT.find(d => d.year === 2023).maxMT,
+    y2024: data.yearsMaxMT.find(d => d.year === 2024).maxMT,
+  }
+  
   onMount(() => {
-    initTimelines()
+    setTimeout(() => {
+      initTimelines()
+    }, 1000)
   })
 
 </script>
 
 <main class="app">
-  <article class="timeline">
-
+  <article class="timeline" bind:clientWidth={$width}>
 
     <SlideSection index=100>
 
@@ -70,14 +87,44 @@
     </SlideSection>
 
 
-    <SlideSection index=1100>
+    <SlideSection index=1000>
 
       <svelte:fragment slot="header">
-        <Headline index=1110>{$_("headline.2")}</Headline>
+        <Block height="22.5vh">
+
+          <PanelContent index=1010>
+            <ChartTitle>
+              {@html $_("chart-title.max-year--precipitation-mt.1")
+                .replace("${1}", format($locale, ".1f", maxMT.y2009))}
+            </ChartTitle>
+          </PanelContent>
+
+          <PanelContent index=1020>
+            <ChartTitle>
+              {@html $_("chart-title.max-year--precipitation-mt.2")
+                .replace("${1}", format($locale, ".1f", maxMT.y2016))}
+            </ChartTitle>
+          </PanelContent>
+
+          <PanelContent index=1030>
+            <ChartTitle>
+              {@html $_("chart-title.max-year--precipitation-mt.3")
+                .replace("${1}", format($locale, ".1f", maxMT.y2023))}
+            </ChartTitle>
+          </PanelContent>
+
+          <PanelContent index=1040>
+            <ChartTitle>
+              {@html $_("chart-title.max-year--precipitation-mt.4")
+                .replace("${1}", format($locale, ".1f", maxMT.y2024))}
+            </ChartTitle>
+          </PanelContent>
+          
+        </Block>
       </svelte:fragment>
 
       <svelte:fragment slot="body">
-        <RaindropChart index=1101 data={data.yearsMaxMT} xShowTo={$yearMaxRainMT} />
+        <RaindropChart index=1001 data={data.yearsMaxMT} xShowTo={$yearMaxRainMT} />
       </svelte:fragment>
 
     </SlideSection>

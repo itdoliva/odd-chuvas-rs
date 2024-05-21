@@ -30,7 +30,7 @@ body {
   font-family: var(--ff-default);
   color: var(--clr-primary);
   font-size: var(--fs-default);
-  line-height: 130%;
+  line-height: 1.3em;
 }
 
 
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5 {
   font-family: var(--ff-headline);
   font-weight: 600;
   margin: 0;
-  line-height: 90%;
+  line-height: 1em;
 }
 
 
@@ -54,7 +54,11 @@ h3 {
   font-size: 58px;
 }
 
-ul {
+h5 {
+  font-size: 36px;
+}
+
+ul, ol, li {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -62,9 +66,25 @@ ul {
 
 .italic {
   font-style: italic;
-  font-family: inherit;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.big {
+  font-size: 1.2em;
 }
 
 .padded {
   padding: 0 calc(1.6*var(--fs-default));
+}
+
+.hidden-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

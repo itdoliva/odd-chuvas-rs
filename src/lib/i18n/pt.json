@@ -7,7 +7,13 @@
     "flooded-cities-pct": "De ${1} cidades, a água transbordou para ${2}, ou ",
     "area-equivalents": "Essa km2 é a área equivalente a",
     "area-corresponds-to": "Que corresponde a ",
-    "people-affected": "Impactando"
+    "people-affected": "Impactando",
+    "max-year--precipitation-mt": {
+      "1": "Em 2009, a semana com maior precipitação registrou <span class='big'><span class='bold'>${1} milímetros</span> acumulados</span>",
+      "2": "Já em 2016, o récorde foi de <span class='big'><span class='bold'>${1} milímetros</span> de precipitação acumulada</span>",
+      "3": "E em 2023, uma semana registrou <span class='big'><span class='bold'>${1} milímetros</span> de precipitação acumulada</span>",
+      "4": "Em 2024, entre 28 de Abril e 4 de Maio choveu <span class='big'><span class='bold'>${1} milímetros</span></span>, um nível sem precedentes"
+    }
   },
   "label": {
     "cities": "municípios",

@@ -1,5 +1,5 @@
 <script>
-  export let index
+  export let index = crypto.randomUUID()
   export let align = "center"
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-  export let index
+  export let index = crypto.randomUUID()
 </script>
 
 <div id="list-{index}" class="list padded">

@@ -1,5 +1,5 @@
 <script>
-  export let index
+  export let index = crypto.randomUUID()
   export let position = "absolute"
   export let top = 0
   export let right = false

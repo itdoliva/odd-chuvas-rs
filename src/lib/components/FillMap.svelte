@@ -21,7 +21,7 @@
     }
   }
 
-  export let index
+  export let index = crypto.randomUUID()
   export let country
   export let p
 
