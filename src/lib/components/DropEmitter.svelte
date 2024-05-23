@@ -1,8 +1,8 @@
 <script>
-  import { onDestroy, onMount} from "svelte";
+  import { onMount} from "svelte";
   import * as d3 from "d3"
 
-  export let emissionRate = 60
+  export let emissionRate = 200
   export let speedMin = 200
   export let speedRange = 700
   export let sizeMin = .5
@@ -29,6 +29,7 @@
 
   let lastUpdate = 0
   let lastEmission = 0
+  let requestId
 
   let animating = true
 
@@ -39,14 +40,17 @@
     .range([ 1, 0 ])
     .clamp(true)
 
+
   onMount(() => {
     ctx = canvas.getContext("2d")
-    loop()
+    requestAnimationFrame(loop)
+
+    return () => {
+      animating = false
+      cancelAnimationFrame(requestId)
+    }
   })
 
-  onDestroy(() => {
-    animating = false
-  })
 
   function DropParticle(x, y, size) {
     const speed = speedMin + (size - sizeMin) / ((sizeMin + sizeRange) - sizeMin) * speedRange
@@ -59,21 +63,22 @@
   }
 
   function update() {
-    /* set the lastUpdate variable to now if it's the first update */
+    const now = Date.now()
+
     if (!lastUpdate) {
-      lastUpdate = Date.now()
-      return;
+        lastUpdate = now
+        return;
     }
 
-    const time = Date.now()
-    let deltaTime = time - lastUpdate
-    
+    const deltaTime = now - lastUpdate
+
+    lastUpdate = now
     lastEmission += deltaTime
-    lastUpdate = time
 
     if (lastEmission > emissionDelay) {
       let i = Math.floor(lastEmission / emissionDelay)
-      lastEmission -= emissionDelay
+
+      lastEmission -= i*emissionDelay
 
       while (i--) {
         drops.push(new DropParticle(
@@ -83,10 +88,6 @@
         ))
       }
     }
-
-
-    // Conver delta time to seconds
-    deltaTime /= 1000
 
     let i = drops.length
     while (i--) {
@@ -102,8 +103,8 @@
         continue
       }
 
-      drop.pos.x += drop.velocity.x * deltaTime
-      drop.pos.y += drop.velocity.y * deltaTime
+      drop.pos.x += drop.velocity.x * (deltaTime/1000)
+      drop.pos.y += drop.velocity.y * (deltaTime/1000)
 
       // drawDrop
       ctx.fillStyle = "rgba(61, 113, 150, " + alphaScale(drop.pos.y) + ")"
@@ -114,13 +115,15 @@
   }
 
   function loop() {
+    requestId = requestAnimationFrame(loop)
+
+    if (!animating) return
+
     ctx.clearRect(0, 0, w*k, h*k)
     update()
-
-    if (animating) {
-      requestAnimationFrame(loop)
-    }
   }
+
+
 
 </script>
 

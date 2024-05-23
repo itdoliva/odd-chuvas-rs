@@ -54,7 +54,10 @@
 
   $: maxRecord = data.find(d => yAcc(d) === d3.max(data, yAcc))
 
+
+
 </script>
+
 
 <div id="rc-{index}" class="rain-chart">
   <DropEmitter {margin} />
