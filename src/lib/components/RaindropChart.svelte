@@ -19,19 +19,19 @@
 
   export let yAcc = d => d.maxMT
   export let yticks = [ 0, 50, 100, 150, 250 ]
-
-  const dropAspectRatio = 1/2
-  const dropWidth = dropAspectRatio * dropHeight
-
-  const maskUUID = crypto.randomUUID()
   
-  const margin = {
+  export let margin = {
     top: 80,
     right: 40,
     bottom: 40,
     left: 60,
   }
 
+  const dropAspectRatio = 1/2
+  const dropWidth = dropAspectRatio * dropHeight
+
+  const maskUUID = crypto.randomUUID()
+  
   const xShowToPos_t = tweened(undefined, { duration: 1000, easing: d3.easeQuadInOut })
 
   let w = 300

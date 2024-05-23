@@ -17,6 +17,7 @@
   import FillMap from "$lib/components/FillMap.svelte";
   import FillSquare from "$lib/components/FillSquare.svelte";
 	import RaindropChart from '$lib/components/RaindropChart.svelte';
+	import RainChart from '$lib/components/RainChart.svelte';
 
   import Clouds from "$lib/components/Clouds.svelte";
   import CityBackground from "$lib/components/CityBackground.svelte";
@@ -28,8 +29,6 @@
   // Functions
   import format from "$lib/format"
   import initTimelines from "$lib/scrollytelling";
-  import Carousel from './components/Carousel.svelte';
-  import CarouselPage from './components/CarouselPage.svelte';
 
   export let data
 
@@ -130,6 +129,21 @@
 
       <svelte:fragment slot="body">
         <RaindropChart index=1001 data={data.yearsMaxMT} xShowTo={$yearMaxRainMT} />
+      </svelte:fragment>
+
+    </SlideSection>
+
+    <SlideSection index=1100>
+
+      <svelte:fragment slot="header">
+        <PanelContent position="relative">
+          <Text size="s" color="var(--clr-annot)">{$_("label.state-precipitation-moving-total")}</Text>
+        </PanelContent>
+
+      </svelte:fragment>
+
+      <svelte:fragment slot="body">
+        <RainChart index=1101 data={data.tragedyMT} />
       </svelte:fragment>
 
     </SlideSection>

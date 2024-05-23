@@ -14,10 +14,18 @@ export async function load({ fetch }) {
       maxMT: +row.max_moving_total_mm
     })))
 
+  const tragedyMT = await fetch('/data/precipitation_data_2024.csv')
+    .then(d => d.text())
+    .then(d => csvParse(d, row => ({
+      date: new Date(row.date),
+      maxMT: +row.mm_moving_total
+    })))
+
 
   return {
     ...overall,
-    yearsMaxMT
+    yearsMaxMT,
+    tragedyMT
   }
 
 }  
